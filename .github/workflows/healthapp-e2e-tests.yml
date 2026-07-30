@@ -21,9 +21,12 @@ jobs:
       working-directory: ./healthapp
       run: npm install
     
+    # ИСПРАВЛЕНО: Добавлен env-флаг обратной совместимости для ESLint v9/v10
     - name: Lint healthapp
       working-directory: ./healthapp
       run: npm run lint
+      env:
+        ESLINT_USE_FLAT_CONFIG: false
     
     - name: Start healthapp server
       working-directory: ./healthapp
