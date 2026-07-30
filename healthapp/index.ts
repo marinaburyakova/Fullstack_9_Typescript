@@ -4,7 +4,7 @@ import { calculateBmi } from './bmiCalculator.js';
 import { calculateExercises } from './exerciseCalculator.js'; 
 
 const app = express();
-
+const PORT = 3003;
 app.use(cors());
 app.use(express.json());
 
@@ -31,7 +31,6 @@ app.get('/bmi', (req, res) => {
 });
 
 app.post('/exercises', (req, res) => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const { daily_exercises, target } = req.body;
 
   if (daily_exercises === undefined || target === undefined) {
@@ -55,8 +54,7 @@ app.post('/exercises', (req, res) => {
   res.json(result);
 });
 
-const PORT = 3003;
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(` Server running on port ${PORT}`);
-});
+})
