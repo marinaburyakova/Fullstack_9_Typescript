@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "types": ["node"], // ← ИСПРАВЛЕНО: Явно подключаем типы Node.js для распознавания process
+    "strict": true,
+    "skipLibCheck": true
+  }
+}
